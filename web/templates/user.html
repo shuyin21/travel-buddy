@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Login page{% endblock %}
+
+{% block content %}
+{% for row in data %}
+<h1>Hello {{row["firstname"]}}</h1>
+<h2>This is the user page</h2>
+
+
+<div id="userdata-div">
+    <h5>Your name: {{row["firstname"]}} {{row["lastname"]}}</h5>
+    <h5>Your email: {{row["email"]}}</h5>
+    <h5>You plan to travel from {{row["country_from"]}} to {{row["country_to"]}}</h5>
+    <h5>Your info about the travel is: {{row["info"]}}</h5>
+    <h5>Your date of travel is: {{row["date"]}}</h5>
+    <h5>Saved traveler 1: {{row["saved_travelers"]}}</h5>
+    <h5>Saved traveler 2 : {{row["saved_travelers2"]}}</h5>
+    <h5>Saved traveler 3: {{row["saved_travelersTwo"]}}</h5>
+
+
+</div>
+<a href="{{url_for('update', memberID=row['Member_ID'])}}">Update</a>
+
+
+
+{% endfor %}
+<span class="message">{{emessage}}</span>
+
+<script src="../static/js/user.js"></script>
+{% endblock %}

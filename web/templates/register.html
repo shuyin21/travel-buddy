@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}register page{% endblock %}
+
+{% block content %}
+<div id="login-wrapper">
+
+
+    <form id="register-form" action="#" method="post">
+
+        <p><input class="form-input" required type="text" name="fname" placeholder="First name"></p>
+        <p><input class="form-input" required type="text" name="lname" placeholder="Last name"></p>
+        <p><input class="form-input" required type="email" name="email" placeholder="Email"></p>
+        <p><input class="form-input" required type="text" name="gender" placeholder="Gender"></p>
+        <p><input class="form-input" required type="text" name="cFrom" placeholder="Country you traveling from"></p>
+        <p><input class="form-input" required type="text" name="cTo" placeholder="Country to visit"></p>
+        <p><textarea class="form-input" required type="text" name="info"
+                placeholder="Information about the trip"></textarea></p>
+        <p><input class="form-input" required type="date" name="date"></p>
+        <p><input class="form-input" required id='pass' type="password" name="pass" placeholder="Password"></p>
+        <p><input class="form-input" required id='cPass' type="password" name="cPass" placeholder="Confirm password">
+        </p>
+        <span id="message" class="message"></span>
+        <p><input id="submit-btn" type="submit" onclick="validator()" value="submit"></p>
+        <span class="message">{{message}}</span>
+    </form>
+
+</div>
+
+
+
+<script src="../static/js/register.js"></script>
+{% endblock %}

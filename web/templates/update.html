@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Login page{% endblock %}
+
+{% block content %}
+{% for row in data %}
+
+
+<div id="updateForm-div">
+    <form action="#" method="POST">
+
+        <p><input class="form-input" required type="text" name="fname" value="{{row['firstname']}}"></p>
+        <p><input class="form-input" required type="text" name="lname" value="{{row['lastname']}}"></p>
+
+        <p><input class="form-input" required type="text" name="gender" value="{{row['gender']}}"></p>
+        <p><input class="form-input" required type="text" name="cFrom" value="{{row['country_from']}}"></p>
+        <p><input class="form-input" required type="text" name="cTo" value="{{row['country_to']}}"></p>
+        <p><textarea class="form-input" required type="text" name="info" placeholder="{{row['info']}}"></textarea></p>
+        <p><input class="form-input" required type="date" name="date" value="{{row['date']}}"></p>
+        <p><input id="submit-btn" type="submit" value="submit"></p>
+
+    </form>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

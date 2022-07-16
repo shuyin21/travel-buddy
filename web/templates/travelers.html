@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Login page{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <th>Traveler`s name</th>
+        <th>Gender</th>
+        <th>Travel from</th>
+        <th>Travel To</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+
+        {% for row in data %}
+        <tr>
+            <td>{{row["firstname"]}} {{row["lastname"]}}</td>
+            <td>{{row["gender"]}}</td>
+            <td>{{row["country_from"]}}</td>
+            <td>{{row["country_to"]}}</td>
+            <td>{{row["date"]}}</td>
+            <td>{{row["saved_travelers"]}}</td>
+
+            <td>
+                <button type="button">
+                    <a href="{{url_for('travelerData', memberID=row['Member_ID'])}}">Contact</a>
+                </button>
+            </td>
+
+
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<script src="../static/js/travelers.js"></script>
+{% endblock %}
